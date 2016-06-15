@@ -1,0 +1,119 @@
+ /*
+GAME BOARD
+*/
+
+body {
+  width: 100vw;
+}
+
+div {
+  position: relative;
+}
+
+.board {
+  background-color: black;
+  color: white;
+  width: 450px;
+  height: 450px;
+  margin-top: 5%;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ffff99;
+}
+
+.content-box {
+  height: 100%;
+}
+
+
+/*
+ O AND X
+*/
+
+.o-or-x {
+  font-size: 2em;
+  top: 36%;
+}
+
+
+/* VICTORY NOTIFICATION LINES
+*/
+
+.horizontal-line::before {
+  content: '';
+  border-bottom: 2px dashed red;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 48%;
+}
+
+.vertical-line::after {
+  content: '';
+  height: 450px;
+  border: 2px dashed red;
+  position: absolute;
+  z-index: 1;
+  top: -35%;
+  left: 50%;
+}
+
+.diagonal-line1::before,
+.diagonal-line2::after {
+  content: '';
+  width: 450px;
+  position: absolute;
+  right: 0;
+  top: 49%;
+}
+
+.diagonal-line1::before {
+  border-bottom: 2px dashed red;
+  -webkit-transform: skewY(-45deg);
+  -moz-transform: skewY(-45deg);
+  -ms-transform: skewY(-45deg);
+   -o-transform: skewY(-45deg);
+  transform: skewY(-45deg);
+}
+
+.diagonal-line2::after {
+  border-bottom: 2px dashed red;
+  -webkit-transform: skewY(45deg);
+  -moz-transform:  skewY(45deg);
+    -ms-transform: skewY(45deg);
+    -o-transform: skewY(45deg);
+  transform: skewY(45deg);
+}
+
+
+/* 
+MEDIA QUERIES
+*/
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 300px;
+    height: 300px;
+  }
+  .box {
+    width: 100px;
+    height: 100px;
+  }
+  .o-or-x {
+    top: 30%;
+  }
+  .vertical-line::after {
+    height: 300px;
+  }
+  .diagonal-line1::before,
+  .diagonal-line2::after {
+    content: '';
+    width: 300px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+  }
+}
